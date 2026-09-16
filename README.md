@@ -3,9 +3,9 @@
 
 ### Helpdesk Queue
 
-![Helpdesk Queue](screenshots/Dashboard.png)
+![Helpdesk Queue](Auriga-Round2/screenshots/Dashboard.png)
 
 ### Create Ticket
 
-![Create Ticket](screenshots/create.png)
+![Create Ticket](Auriga-Round2/screenshots/create.png)
 
