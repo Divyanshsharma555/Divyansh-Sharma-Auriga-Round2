@@ -1,7 +1,7 @@
 const db = require('../db/database');
 const { getQueueOrder } = require('../utils/queue');
 
-const priorities = ['urgent', 'normal'];
+const priorities = ['urgent', 'high', 'normal'];
 const statuses = ['open', 'in_progress', 'resolved'];
 
 const formatTicket = (ticket) => ({
@@ -23,7 +23,7 @@ const validateStatus = (status) => statuses.includes(status);
 
 const getDueTime = (createdAt, priority) => {
     const date = new Date(createdAt);
-    date.setHours(date.getHours() + (priority === 'urgent' ? 2 : 24));
+    date.setHours(date.getHours() + (priority === 'urgent' ? 2 : priority === 'high' ? 12 : 24));
     return date.toISOString();
 };
 

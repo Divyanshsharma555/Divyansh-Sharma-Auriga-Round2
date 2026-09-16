@@ -1,3 +1,4 @@
+const escalationJob = require('./jobs/escalation');
 const express = require('express');
 const cors = require('cors');
 const ticketsRouter = require('./routes/tickets');
@@ -25,7 +26,9 @@ app.use((error, req, res, next) => {
         error: error.status ? error.message : 'Internal server error'
     });
 });
+escalationJob();
 
+setInterval(escalationJob, 60000);
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

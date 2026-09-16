@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS tickets (
     customer_name TEXT NOT NULL,
     title TEXT NOT NULL,
     description TEXT,
-    priority TEXT NOT NULL CHECK (priority IN ('urgent', 'normal')),
+    priority TEXT NOT NULL CHECK (priority IN ('urgent', 'high', 'normal')),
     status TEXT NOT NULL DEFAULT 'open' CHECK (status IN ('open', 'in_progress', 'resolved')),
     assignee TEXT,
     created_at TEXT NOT NULL,
